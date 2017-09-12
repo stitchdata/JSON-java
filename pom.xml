@@ -3,8 +3,7 @@
 
 	<groupId>org.json</groupId>
 	<artifactId>json</artifactId>
-	<version>20170516</version>
-	<packaging>bundle</packaging>
+	<version>20170516-stitch-1.0.0</version>
 
 	<name>JSON in Java</name>
 	<description>
@@ -100,20 +99,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<version>3.0.1</version>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Export-Package>
-							org.json
-						</Export-Package>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-					</instructions>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
@@ -148,20 +133,6 @@
 						<configuration>
 							<additionalparam>-Xdoclint:none</additionalparam>
 						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
 					</execution>
 				</executions>
 			</plugin>
