@@ -1972,22 +1972,7 @@ public class JSONObject {
         char initial = string.charAt(0);
         if ((initial >= '0' && initial <= '9') || initial == '-') {
             try {
-                // if we want full Big Number support this block can be replaced with:
-                // return stringToNumber(string);
-                if (isDecimalNotation(string)) {
-                    Double d = Double.valueOf(string);
-                    if (!d.isInfinite() && !d.isNaN()) {
-                        return d;
-                    }
-                } else {
-                    Long myLong = Long.valueOf(string);
-                    if (string.equals(myLong.toString())) {
-                        if (myLong.longValue() == myLong.intValue()) {
-                            return Integer.valueOf(myLong.intValue());
-                        }
-                        return myLong;
-                    }
-                }
+                return stringToNumber(string);
             } catch (Exception ignore) {
             }
         }
